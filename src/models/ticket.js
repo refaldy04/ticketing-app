@@ -16,6 +16,6 @@ exports.createTicketType = (data, cb) => {
 
 exports.getAllTicketType = (cb) => {
   db.query('SELECT * FROM ticket_type', (err, res) => {
-    cb(res.rows[0])
+    cb(res.rows)
   })
 }
