@@ -19,3 +19,11 @@ exports.getAllTicketType = (cb) => {
     cb(res.rows)
   })
 }
+
+exports.deleteTicketType = (id, cb) => {
+  const query = 'DELETE FROM ticket_type WHERE id=$1 RETURNING *'
+  const value = [id]
+  db.query(query, value, (err, res) => {
+    cb()
+  })
+}

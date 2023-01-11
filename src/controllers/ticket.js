@@ -13,3 +13,9 @@ exports.getAllTicketType = (req, res) => {
     return response(res, 'List all ticket type', result)
   })
 }
+
+exports.deleteTicketType = (req, res) => {
+  ticketModel.deleteTicketType(req.params.id, () => {
+    return response(res, 'Delete data success')
+  })
+}
